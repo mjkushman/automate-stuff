@@ -1,0 +1,30 @@
+import re
+
+put = 'hat'
+
+#wStrip = re.compile(put)
+#mol = wStrip.findall('hello this hat in hat pab that')
+
+#print (mol)
+
+
+
+def regstrip(string,char): #removed char from string. If char is left empty, them removes surrounding whitespace.
+	
+
+	if char == '':
+		#print('if triggered')
+		wStrip = re.compile(r'(\s*)(.*)(\s*)')
+		result = wStrip.sub(r'\2',string)
+		#result = wStrip.sub(string,'')
+		print(result)
+	else:
+		#print('else triggered')
+		result = re.sub(char,'',string)
+		#result = wStrip.sub(string,char)
+		print(result)
+
+inputstring = input('Give me a string: ')
+inputchar = input('What do you want removed? Leave blank to remove surrounding whitespaces. ')
+
+regstrip(inputstring,inputchar)
